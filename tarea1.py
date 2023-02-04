@@ -153,24 +153,6 @@ mostrarPrimos(1000)
 
 #punto 5
 
-def matrizDispersa(lista):
-
-    dic = {}
-
-    for i in range(len(lista)):
-        lista2 = []
-        for j in range(len(lista[i])):
-            if(lista[i][j] != 0):
-                lista2.append((j,lista[i][j]))
-        if len(lista2) != 0:
-            dic[i] = lista2
-
-    return dic
-
-disp = matrizDispersa([[1, 0, 0, 0, 0, 4, 0, 5],[0, 0, 0, 0, 0, 0, 4, 7],[2, 2, 0, 0, 9, 0, 1, 0],[0, 0, 0, 0, 0, 0, 0, 0],[0, 0, 8, 1, 0, 7, 0, 0],[0, 0, 0, 0, 0, 0, 0, 0],[3, 0, 0, 0, 0, 6, 0, 2],[4, 4, 7, 0, 0, 0, 0, 0],[0, 9, 0, 8, 0, 7, 0, 6]])
-
-
-
 def sumaValoresMatriz(disp,lista):
 
     contador = 0
@@ -185,6 +167,12 @@ def sumaValoresMatriz(disp,lista):
         
 
 
-sumaValoresMatriz(disp,[(0, 0), (8, 3), (3, 5), (7, 2), (4, 3), (4,6)])
+sumaValoresMatriz({0 : [(0, 1), (5, 4), (7, 5)],
+		   1 : [(6, 4), (7, 7)],
+		   2 : [(0, 2), (1, 2), (4, 9), (6, 1)],
+		   4 : [(2, 8), (3, 1), (5, 7)],
+		   6 : [(0, 3), (5, 6), (7, 2)],
+		   7 : [(0, 4), (1, 4), (2, 7)],
+		   8 : [(1, 9), (3, 8), (5, 7), (7, 6)]},[(0, 0), (8, 3), (3, 5), (7, 2), (4, 3), (4,6)])
 
 
