@@ -1,3 +1,3 @@
 # tarea1_SantiagoArangoHenao
 
-Buen día Profesores Carlos Ramirez y Gonzalo Noreña, les dejo en este repositorio la primer tarea asignada del curso. 
+En este repositorio encontrarán las soluciones a las respectivas tareas del curso Estructuras de Datos 
