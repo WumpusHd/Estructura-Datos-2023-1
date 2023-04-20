@@ -15,11 +15,12 @@ Tarea #5
 /*
 Complejidad Algoritmica ContarOcurrencias:
 
-La complejidad del algoritmo Contar Ocurrencias es de O(((3n)/2)) por la razón que si tenemos una lista de N elementos,
+La complejidad del algoritmo Contar Ocurrencias es de O(n) por la razón que si tenemos una lista de N elementos,
 entonces tomará N iteraciones para determinar cuantas veces se repite el elemento v, ya que la complejidad para calcular
 el largo de una lista circular doble es O(n), además tener en cuenta que se usa la operacion infoLista que tiene un costo
-de O(n/2), la cual se emplea para conocer el valor de cada posicion en la lista. Teniendo todo esto en cuenta para el peor caso,
-se concluye que la complejidad de la operacion ContarOcurrencias es O(((3n)/2)).
+de O(n/2), la cual se emplea para conocer el valor de cada posicion en la lista, pero aunque se tenga en cuenta la informacion
+en esa posicion de la lista, sigue siendo lineal ya que solo se comparan valores entre si. Teniendo todo esto en cuenta para el peor caso,
+se concluye que la complejidad de la operacion ContarOcurrencias es O(n).
 */
 
 int contarOcurrencias(Lista &l, int elemento)
@@ -43,9 +44,11 @@ int contarOcurrencias(Lista &l, int elemento)
 Para calcular la complejidad del siguiente algoritmo, se tiene en cuenta el costo de cada una 
 de las operaciones usadas de listas circulares dobles, longLista O(n) , infoLista O(n/2) y anxLista O(1).
 En el peor caso, se tendría una lista de n elementos, dentro de los cuales se retornara una lista con aquellos
-numeros menores al elemento pasado como parametro. Sería recorrer una lista de n elementos, donde n elementos sean menores
-al elemento dado y finalmente agregarlos a una lista, sería una complejidad de O(n) + O(n/2) +O(1) = O(((3n)/2)+1), casi identica
-a la complejidad del anterior algoritmo 
+numeros menores al elemento pasado como parametro, en caso que no haya elementos menores, sería constante ya que solo se
+recorre una posición. Considere que tenemos un número demasiado grande, la cantidad de elementos menores a este sería n elementos
+ya que solo consta de constantes, sin embargo, todos estos n elementos se agregan a una lista, lo cual aumenta la complejidad
+de ser lineal a ser cuadratica ya que por cada elemento menor al dado, se tiene que agregar a otra lista, es el doble de trabajo.
+Por lo tanto, la complejidad del algoritmo obtenerMenores es O(n^2).
 
 Lista obtenerMenores(Lista &l, int elemento)
 {
