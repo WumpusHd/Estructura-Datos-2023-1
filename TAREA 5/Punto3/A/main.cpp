@@ -1,7 +1,10 @@
 #include "lista.h"
 #include <iostream>
-
 /*
+Estudiante: Santiago Arango Henao
+Codigo: 8971445
+Tarea #5
+
 Complejidad Algoritmica:
 
 La complejidad del siguiente algoritmo es O(K) por la siguiente razón:
