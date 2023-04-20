@@ -1,5 +1,9 @@
 #include "lista.h"
 
+/*Complejidad Algoritmica:
+
+La complejidad del algoritmo contarOcurrencias es O(n) por que si tenemos una lista de n elementos, en la cual buscamos las veces que un determinado
+valor se encuentra en dicha lista, */
 int contarOcurrencias(Lista &l, int elemento)
 {
 	int elementoRepetido = 0;
