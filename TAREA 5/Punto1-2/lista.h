@@ -26,6 +26,7 @@ class Nodo{
      Nodo* sig;
      Nodo* ant;
 
+     ~Nodo();
 };
 
 class Lista{
@@ -48,6 +49,7 @@ class Lista{
     /* Analizadoras */
     Elemento infoLista(int pos);
     int longLista();
+    bool vaciaLista();
 };
 
 #endif
