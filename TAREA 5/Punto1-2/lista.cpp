@@ -55,9 +55,5 @@ int Lista::longLista(){
   return ans;
 }
 
-bool Lista::vaciaLista()
-{
-	return act == NULL;
-}
 
 
