@@ -2,6 +2,13 @@
 #include <iostream>
 
 
+/*
+Complejidad Algoritmica ContarOcurrencias:
+
+La complejidad del algoritmo Contar Ocurrencias es de O(n^2) por la razón que si tenemos una lista de N elementos,
+entonces tomará N iteraciones para determinar cuantas veces se repite el elemento v, pero si dicho elemento v no existiera
+en la lista, tomaría N iteraciones para encontrarlo, por lo cual se tomaría que la complejidad seria O(n^2)*/
+
 int contarOcurrencias(Lista &l, int elemento)
 {
 	int elementoRepetido = 0;
