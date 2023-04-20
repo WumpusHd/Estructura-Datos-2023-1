@@ -1,59 +1,124 @@
 #include "lista.h"
-
-
-Lista::Lista()
-{
-	act = NULL;
+ 
+Nodo::~Nodo(){
+  cout << "Borrando nodo " << dato << endl;
+  sig = NULL;
+  ant = NULL;
+  delete sig;
+  delete ant;
 }
 
+Lista::Lista(){
+  act = NULL;
+}
 
-void Lista::anxLista(int elemento){
-  Nodo *temporal, *primero;
+void Lista::anxLista(Elemento elem){
+  Nodo *tmp, *primero;
   Nodo* nuevo = new Nodo;
-  nuevo->dato = elemento;
+  nuevo->dato = elem;
   nuevo->sig = nuevo;
   nuevo->ant = nuevo;
 
   if(act == NULL)
     act = nuevo;
   else{
-    temporal = act->ant;
-    temporal->sig = nuevo;
-    nuevo->ant = temporal;
+    tmp = act->ant;
+    tmp->sig = nuevo;
+    nuevo->ant = tmp;
     nuevo->sig = act;
     act->ant = nuevo;
   }
 }
 
-int Lista::infoLista(int posicion){
-  Nodo* temporal = act;
-  for(int i = 1; i < posicion; i++)
-    temporal = temporal->sig;
+void Lista::insLista(Elemento elem, int pos){
+  Nodo *nuevo, *tmp;
+  nuevo = new Nodo;
+  nuevo->dato = elem;
+  nuevo->sig = NULL;
+  nuevo->ant = NULL;
 
-  return temporal->dato;
+  if(pos >= 1 && pos <= longLista()){
+    if(pos == 1){
+      tmp = act->ant;
+      tmp->sig = nuevo;
+      nuevo->ant = tmp;
+      nuevo->sig = act;
+      act->ant = nuevo;
+      act = nuevo;
+    }
+    else{
+      tmp = act;
+      for(int i = 0; i < pos - 2; i++)
+        tmp = tmp->sig;
+      nuevo->sig = tmp->sig;
+      nuevo->ant = tmp;
+      tmp->sig->ant = nuevo;
+      tmp->sig = nuevo;
+    }
+  }
+}
+ 
+void Lista::elimLista(int pos){
+  Nodo *tmp, *borrar;
+  if(pos >= 1 && pos <= longLista()){
+    if(pos == 1){
+      if(act != act->sig){
+        tmp = act->ant;
+        borrar = tmp->sig;
+        act = act->sig;
+        act->ant = tmp;
+        tmp->sig = act;
+      }
+      else{
+        borrar = act;
+        act = NULL;
+      }
+    }
+    else{
+      tmp = act;
+      for(int i = 0; i < pos-2; i++)
+          tmp = tmp->sig;
+      borrar = tmp->sig;
+      Nodo* sig = tmp->sig->sig;
+      tmp->sig = sig;
+      sig->ant = tmp;
+    }
+
+    delete borrar;
+  }
 }
 
+Elemento Lista::infoLista(int pos){
+   Nodo* tmp = act;
+   
+   for(int i = 1; i < pos; i++)
+      tmp = tmp->sig;
+      
+   return tmp->dato;
+}
 
 int Lista::longLista(){
   int ans;
   if(vaciaLista())
     ans = 0;
   else{
-    Nodo* temporal, *primero;
-    int contador = 1;
-    temporal = act;
+    Nodo* tmp, *primero;
+    int cont = 1;
+    tmp = act;
     primero = act;
 
-    while(temporal->sig != primero){
-      temporal = temporal->sig;
-      contador++;
+    while(tmp->sig != primero){
+      tmp = tmp->sig;
+      cont++;
     }
 
-    ans = contador;
+    ans = cont;
   }
 
   return ans;
 }
 
-
+bool Lista::vaciaLista(){
+   return act == NULL;
+}
 
