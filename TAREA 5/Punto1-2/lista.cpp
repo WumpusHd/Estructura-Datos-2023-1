@@ -121,4 +121,3 @@ int Lista::longLista(){
 bool Lista::vaciaLista(){
    return act == NULL;
 }
-

@@ -64,8 +64,9 @@ int main()
 	l1.anxLista(3);
 	l1.anxLista(5);
 	l1.anxLista(9);
-	//int  elementoRepetido = contarOcurrencias(l1,5);
-	//printf("%d", elementoRepetido);
+	int  elementoRepetido = contarOcurrencias(l1,5);
+	printf("%d", elementoRepetido);
+	printf("\n");
 
 
 	/*Implementacion punto 2 */
