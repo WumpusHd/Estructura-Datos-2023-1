@@ -8,7 +8,9 @@ La complejidad del siguiente algoritmo es O(K) por la siguiente razón:
 Si tenemos una lista de elementos n y buscamos insertar un elemento en dicha lista
 de forma que la lista siga ordenada de menor a mayor, un caso interesante podría ser si el elemento
 insertado va al inicio de la lista o al final, independientemente de cual sea el valor y la lista,
-siempre habrá una posición donde el elemento quede ubicado.*/
+siempre habrá una posición donde el elemento quede ubicado.
+
+*/
 
 
 
