@@ -48,7 +48,6 @@ class Lista{
     /* Analizadoras */
     Elemento infoLista(int pos);
     int longLista();
-    bool vaciaLista();
 };
 
 #endif
