@@ -9,10 +9,8 @@ Estudiante: Santiago Arango Henao
 Codigo: 8971445
 
 Tarea #5
-*/
 
 
-/*
 Complejidad Algoritmica ContarOcurrencias:
 
 La complejidad del algoritmo Contar Ocurrencias es de O(n) por la razón que si tenemos una lista de N elementos,
