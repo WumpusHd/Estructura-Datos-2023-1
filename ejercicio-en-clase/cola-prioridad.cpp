@@ -1,8 +1,9 @@
 /*
-Autor: Carlos Ramírez
-Fecha: Abril 28 de 2023
+Autores: Laura Isabel Olivero
+         Santiago Arango Henao
+Fecha: Mayo 5 de 2023
 
-Implementación TAD Cola
+Implementación TAD Cola de Prioridad
 
  */
 
