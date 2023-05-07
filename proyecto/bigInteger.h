@@ -19,10 +19,10 @@
 using namespace std;
 
 
-class bigInteger{
+class BigInteger{
 
 	private:
-		string bigInteger;
+		string BigInteger;
 };
 
 
@@ -35,28 +35,28 @@ class metodosBigInteger{
 		/*      Constructoras       */
 		constructorBigInteger(string entero);
 
-		constructorBigIntegerCopia();
+		constructorBigIntegerCopia(BigInteger);
 
 		/*      Modificadoras       */
 
-		void add(bigInteger);
-		void product(bigInteger);
-		void substract(bigInteger);
-		void quotient(bigInteger);
-		void remainder(bigInteger);
-		void pow(bigInteger);
-		metodosBigInteger operator +(bigInteger);
-		metodosBigInteger operator -(bigInteger);
-		metodosBigInteger operator *(bigInteger);
-		metodosBigInteger operator /(bigInteger);
-		metodosBigInteger operator %(bigInteger);
-		metodosBigInteger operator ==(bigInteger);
-		metodosBigInteger operator <(bigInteger);
-		metodosBigInteger operator <=(bigInteger);
+		void add(BigInteger &entero);
+		void product(BigInteger &entero);
+		void substract(BigInteger &entero);
+		void quotient(BigInteger &entero);
+		void remainder(BigInteger &entero);
+		void pow(BigInteger &entero);
+		metodosBigInteger operator +(BigInteger &entero);
+		metodosBigInteger operator -(BigInteger &entero);
+		metodosBigInteger operator *(BigInteger &entero);
+		metodosBigInteger operator /(BigInteger &entero);
+		metodosBigInteger operator %(BigInteger &entero);
+		metodosBigInteger operator ==(BigInteger &entero);
+		metodosBigInteger operator <(BigInteger &entero);
+		metodosBigInteger operator <=(BigInteger &entero);
 
 
-		Lista sumarListaValores(bigInteger);
-		Lista MultiplicarListaValores(bigInteger);
+		BigInteger sumarListaValores(BigInteger &entero);
+		BigInteger MultiplicarListaValores(BigInteger &entero);
 
 		/*      Analizadoras      */
 		string toString();
