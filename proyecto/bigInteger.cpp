@@ -53,7 +53,7 @@ metodosBigInteger::constructorBigInteger(string entero){
 
 metodosBigInteger::constructorBigIntegerCopia()
 {
-	bigInteger copiaEntero = constructorBigInteger(string entero);
+	Lista copiaEntero = constructorBigInteger(string entero);
 }
 
 
