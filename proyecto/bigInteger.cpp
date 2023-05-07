@@ -57,9 +57,8 @@ metodosBigInteger::constructorBigInteger(string entero){
 
 
 
-/*
 metodosBigInteger::constructorBigIntegerCopia()
 {
-	//int bigInteger2 = constructorBigInteger();
+	constructorBigInteger();
 }
-*/
+
