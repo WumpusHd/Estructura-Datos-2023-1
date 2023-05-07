@@ -14,6 +14,7 @@
 
 #include "lista.h"
 #include <iostream>
+#include <vector>
 #include <string>
 
 using namespace std;
@@ -23,6 +24,7 @@ class BigInteger{
 
 	private:
 		string BigInteger;
+		vector<BigInteger> bigIntegers;
 };
 
 
@@ -55,8 +57,8 @@ class metodosBigInteger{
 		metodosBigInteger operator <=(BigInteger &entero);
 
 
-		BigInteger sumarListaValores(BigInteger &entero);
-		BigInteger MultiplicarListaValores(BigInteger &entero);
+		BigInteger sumarListaValores(vector<BigInteger> &bigIntegers);
+		BigInteger MultiplicarListaValores(vector<BigInteger> &bigIntegers);
 
 		/*      Analizadoras      */
 		string toString();
