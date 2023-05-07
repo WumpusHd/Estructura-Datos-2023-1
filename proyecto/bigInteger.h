@@ -36,7 +36,7 @@ class metodosBigInteger{
 		/*      Constructoras       */
 		constructorBigInteger(string);
 
-		//constructorBigIntegerCopia();
+		constructorBigIntegerCopia();
 
 		/*      Modificadoras       */
 
