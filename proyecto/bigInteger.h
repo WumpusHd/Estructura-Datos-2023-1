@@ -25,19 +25,16 @@ class BigInteger{
 	private:
 		string BigInteger;
 		vector<BigInteger> bigIntegers;
-};
 
-
-class metodosBigInteger{
 	public:
 
 		/*Operaciones del TAD BIG INTEGER */
 
 
 		/*      Constructoras       */
-		constructorBigInteger(string entero);
+		BigInteger(string);
 
-		constructorBigIntegerCopia(BigInteger);
+		BigInteger(BigInteger);
 
 		/*      Modificadoras       */
 
@@ -47,18 +44,18 @@ class metodosBigInteger{
 		void quotient(BigInteger &entero);
 		void remainder(BigInteger &entero);
 		void pow(BigInteger &entero);
-		metodosBigInteger operator +(BigInteger &entero);
-		metodosBigInteger operator -(BigInteger &entero);
-		metodosBigInteger operator *(BigInteger &entero);
-		metodosBigInteger operator /(BigInteger &entero);
-		metodosBigInteger operator %(BigInteger &entero);
-		metodosBigInteger operator ==(BigInteger &entero);
-		metodosBigInteger operator <(BigInteger &entero);
-		metodosBigInteger operator <=(BigInteger &entero);
+		BigInteger operator +(BigInteger &entero);
+		BigInteger operator -(BigInteger &entero);
+		BigInteger operator *(BigInteger &entero);
+		BigInteger operator /(BigInteger &entero);
+		BigInteger operator %(BigInteger &entero);
+		BigInteger operator ==(BigInteger &entero);
+		BigInteger operator <(BigInteger &entero);
+		BigInteger operator <=(BigInteger &entero);
 
 
-		BigInteger sumarListaValores(vector<BigInteger> &bigIntegers);
-		BigInteger MultiplicarListaValores(vector<BigInteger> &bigIntegers);
+		BigInteger sumarListaValores(Lista &bigIntegers);
+		BigInteger MultiplicarListaValores(Lista &bigIntegers);
 
 		/*      Analizadoras      */
 		string toString();
