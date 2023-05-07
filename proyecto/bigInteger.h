@@ -23,7 +23,6 @@ class bigInteger{
 
 	private:
 		string bigInteger;
-		Lista l;
 };
 
 
@@ -34,7 +33,7 @@ class metodosBigInteger{
 
 
 		/*      Constructoras       */
-		constructorBigInteger(string);
+		constructorBigInteger(string entero);
 
 		constructorBigIntegerCopia();
 

@@ -14,7 +14,6 @@
 
 metodosBigInteger::constructorBigInteger(string entero){
 	Lista l;
-
 	for(int i = 0; i < entero.length()+1; ++i)
 	{
 		if(entero[i] == '0')
@@ -47,18 +46,13 @@ metodosBigInteger::constructorBigInteger(string entero){
 		if(entero[i] == '9')
 			l.anxLista(9);
 	}
-
-	cout << "Valor Posicion 1: " << l.infoLista(1) << endl;
-	cout << "Valor Posicion 2: " << l.infoLista(2) << endl;
-	cout << "Valor Posicion 3: " << l.infoLista(3) << endl;
-	cout << "Valor Posicion 4: " << l.infoLista(4) << endl;
-
 }
+
 
 
 
 metodosBigInteger::constructorBigIntegerCopia()
 {
-	constructorBigInteger();
+	bigInteger copiaEntero = constructorBigInteger(string entero);
 }
 
