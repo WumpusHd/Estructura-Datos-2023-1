@@ -56,3 +56,82 @@ metodosBigInteger::constructorBigIntegerCopia()
 	bigInteger copiaEntero = constructorBigInteger(string entero);
 }
 
+
+void add(BigInteger &entero){
+
+}
+
+
+void product(BigInteger &entero){
+
+}
+
+
+void substract(BigInteger &entero){
+
+}
+
+
+void quotient(BigInteger &entero){
+
+}
+
+
+void remainder(BigInteger &entero){
+
+}
+
+
+void pow(BigInteger &entero){
+
+}
+
+
+metodosBigInteger::operator +(BigInteger &entero){
+
+}
+
+
+metodosBigInteger::operator -(BigInteger &entero){
+
+}
+
+
+metodosBigInteger::operator *(BigInteger &entero){
+
+}
+
+
+metodosBigInteger::operator /(BigInteger &entero){
+
+}
+
+
+metodosBigInteger::operator %(BigInteger &entero){
+
+}
+
+
+metodosBigInteger::operator ==(BigInteger &entero){
+
+}
+
+
+metodosBigInteger::operator <(BigInteger &entero){
+
+}
+
+
+metodosBigInteger::operator <=(BigInteger &entero){
+
+}
+
+
+BigInteger sumarListaValores(vector<BigInteger> &bigIntegers){
+
+}
+
+BigInteger MultiplicarListaValores(vector<BigInteger> &bigIntegers){
+
+}
+
