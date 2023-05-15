@@ -12,38 +12,38 @@
 
 #include <iostream>
 #include <string>
-#include <list>
+#include <vector>
 
 void keyboard()
 {
-    std::list<std::string> brokenText;
-    std::string text = "";
+    std::vector<char> brokenText;
+    std::string text;
     while(std::cin >> text)  
     {
         for(int i = 0; i < text.length(); ++i)
         {
-            std::string e(1,text[i]);
-            brokenText.push_back(e);
+            brokenText.push_back(text[i]);
         }
 
-        for(std::list<std::string>::iterator it = brokenText.begin(); it != brokenText.end(); ++it)
-        {
-            std::string element = *it;
 
-            if( element ==  "[")
+        for(int i = 0; i <= brokenText.size(); ++i)
+        {
+            bool print_first = false;
+            if(brokenText[i] ==  '[')
             {
-                it =  brokenText.begin();
-                std::cout << *it;
-                it = brokenText
+                print_first = true;
             }
-            if( element ==  "]")
+            else if( brokenText[i] ==  '[')
             {
-                it = brokenText.end();
-                std::cout << *it;
+                print_first = false;
+            }
+            else if(print_first)
+            {
+                std::cout << brokenText[i];
             }
             else
             {
-                std::cout << *it;
+                std::cout << brokenText[i];
             }
         }
 
