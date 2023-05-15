@@ -25,15 +25,14 @@ void keyboard()
             brokenText.push_back(text[i]);
         }
 
-
+        bool print_first = false;
         for(int i = 0; i <= brokenText.size(); ++i)
         {
-            bool print_first = false;
             if(brokenText[i] ==  '[')
             {
                 print_first = true;
             }
-            else if( brokenText[i] ==  '[')
+            else if( brokenText[i] ==  ']')
             {
                 print_first = false;
             }
@@ -46,7 +45,7 @@ void keyboard()
                 std::cout << brokenText[i];
             }
         }
-
+        brokenText.clear();
     }
 }
 
