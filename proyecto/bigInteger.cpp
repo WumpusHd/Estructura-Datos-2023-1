@@ -19,7 +19,7 @@ BigInteger::BigInteger(){
 
 BigInteger::BigInteger(const std::string& entero) {
     for (int i = entero.length()-1; i >= 0; i--) {
-        int enteroTmp = entero[i] - '0';
+        int enteroTmp = entero[i] - '0';    
         enterosGrandes.push_back(enteroTmp);
     }
 }
@@ -52,15 +52,13 @@ void BigInteger::add(BigInteger& entero) {
 }
 
 void BigInteger::product(BigInteger& entero) {
-    BigInteger result;  // Objeto BigInteger para almacenar el resultado
-    int maxDigitos = enterosGrandes.size() + entero.enterosGrandes.size();  // Número máximo de dígitos en el resultado
+    BigInteger resultado;  
+    int maxDigitos = enterosGrandes.size() + entero.enterosGrandes.size();  
 
-    // Inicializar result con ceros para almacenar los dígitos multiplicados
     for (int i = 0; i < maxDigitos; i++) {
-        result.enterosGrandes.push_back(0);
+        resultado.enterosGrandes.push_back(0);
     }
 
-    // Realizar la multiplicación dígito por dígito
     for (int i = 0; i < enterosGrandes.size(); i++) {
         int lleva = 0;
 
@@ -73,17 +71,15 @@ void BigInteger::product(BigInteger& entero) {
             lleva = prod / 10;
             prod %= 10;
 
-            // Sumar el producto parcial al resultado
-            result.enterosGrandes[i + j] += prod;
-            if (result.enterosGrandes[i + j] >= 10) {
-                result.enterosGrandes[i + j] -= 10;
+            resultado.enterosGrandes[i + j] += prod;
+            if (resultado.enterosGrandes[i + j] >= 10) {
+                resultado.enterosGrandes[i + j] -= 10;
                 lleva++;
             }
         }
     }
 
-    // Copiar el resultado al objeto actual
-    enterosGrandes = result.enterosGrandes;
+    enterosGrandes = resultado.enterosGrandes;
 
 }
 
@@ -114,16 +110,14 @@ void BigInteger::substract(BigInteger& entero) {
             enterosGrandes.push_back(diferencia);
     }
 
-    
-    // Eliminar ceros sobrantes al frente del número
-    /* while (enterosGrandes.size() > 1 && enterosGrandes.back() == 0) {
+    //Eliminar ceros restantes del frente del vector
+     while (enterosGrandes.size() > 1 && enterosGrandes.back() == 0) {
         enterosGrandes.pop_back();
-    }*/
+    }
 }
 
 
 void BigInteger::quotient(BigInteger& divisor){
-    // Crear objetos BigInteger para almacenar el cociente y el residuo
     BigInteger cociente;
     BigInteger incremento("1");
     BigInteger residuo(*this);
@@ -144,31 +138,31 @@ void BigInteger::quotient(BigInteger& divisor){
 
 void BigInteger::pow(int exponent) {
     
-    BigInteger base(*this);      // Base (copia del objeto actual)
-    BigInteger result("1");        // Resultado inicializado en 1
+    BigInteger base(*this);      
+    BigInteger resultado("1");       
 
     while (exponent > 0) {
         if (exponent % 2 == 1) { // Si el exponente es impar
-            result.product(base);
+            resultado.product(base);
         }
 
-        base.product(base);    // Elevar la base al cuadrado
-        exponent /= 2;          // Dividir el exponente por 2
+        base.product(base);   
+        exponent /= 2;         
     }
 
-    *this = result;             // Actualizar el objeto actual con el resultado
+    *this = resultado;            
 }
 
 
 
 std::string BigInteger::toString(){
-    std::string result;
+    std::string resultado;
 
     for (int i = enterosGrandes.size() - 1; i >= 0; i--) {
-        result += std::to_string(enterosGrandes[i]);
+        resultado += std::to_string(enterosGrandes[i]);
     }
 
-    return result;
+    return resultado;
 }
 
 
@@ -211,14 +205,15 @@ BigInteger BigInteger::operator/(BigInteger& entero){
 }
 
 /*
-BigInteger BigInteger::operator%(BigInteger& entero){
-    BigInteger residuo(*this);
+BigInteger BigInteger::operator%(BigInteger& divisor)  {
+   
 
-    residuo.remainder(entero);
+    BigInteger cociente = *this / divisor;  
+    BigInteger residuo = *this - (cociente * divisor);  
 
     return residuo;
-
 }
+
 */
 
  bool BigInteger::operator==(BigInteger& entero){
@@ -244,6 +239,8 @@ BigInteger BigInteger::operator-=(BigInteger& entero) {
     *this = *this - entero;
     return *this;
 }
+
+
 
 
 
