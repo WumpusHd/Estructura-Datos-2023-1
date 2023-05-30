@@ -1,3 +1,13 @@
+/*
+ *
+ * Autor: Santiago Arango Henao
+ *Fecha Creacion: 30 de Abril 2023
+ *Version 1
+ *
+ *Archivo imeplementación funciones Big Integer
+ */
+
+
 #include "bigInteger.h"
 
 
@@ -190,7 +200,7 @@ BigInteger BigInteger::operator*(BigInteger& entero){
 
 }
 
-/*
+
 BigInteger BigInteger::operator/(BigInteger& entero){
     BigInteger division(*this);
 
@@ -200,7 +210,7 @@ BigInteger BigInteger::operator/(BigInteger& entero){
 
 }
 
-
+/*
 BigInteger BigInteger::operator%(BigInteger& entero){
     BigInteger residuo(*this);
 
@@ -208,7 +218,8 @@ BigInteger BigInteger::operator%(BigInteger& entero){
 
     return residuo;
 
-}*/
+}
+*/
 
  bool BigInteger::operator==(BigInteger& entero){
     return enterosGrandes == entero.enterosGrandes;
@@ -233,7 +244,6 @@ BigInteger BigInteger::operator-=(BigInteger& entero) {
     *this = *this - entero;
     return *this;
 }
-
 
 
 
