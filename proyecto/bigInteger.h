@@ -1,66 +1,57 @@
-/*
- *
- * Autor: Santiago Arango Henao
- *Fecha Creacion: 30 de Abril 2023
- *Fecha Ultima Modificacion: 
- *Version 1
- *
- *Archivo implementacion Prototipos Big Integer
- */
+#ifndef BIGINTEGER_H
+#define BIGINTEGER_H
 
-
-#ifndef __BIGINTEGER_H
-#define __BIGINTEGER_H
-
-#include "lista.h"
 #include <iostream>
-#include <vector>
 #include <string>
-
-using namespace std;
-
-
-class BigInteger{
-
-	private:
-		string BigInteger;
-		vector<BigInteger> bigIntegers;
-
-	public:
-
-		/*Operaciones del TAD BIG INTEGER */
+#include <vector>
 
 
-		/*      Constructoras       */
-		BigInteger(string);
+class BigInteger {
+private:
+    std::vector<int> enterosGrandes;
 
-		BigInteger(BigInteger);
-
-		/*      Modificadoras       */
-
-		void add(BigInteger &entero);
-		void product(BigInteger &entero);
-		void substract(BigInteger &entero);
-		void quotient(BigInteger &entero);
-		void remainder(BigInteger &entero);
-		void pow(BigInteger &entero);
-		BigInteger operator +(BigInteger &entero);
-		BigInteger operator -(BigInteger &entero);
-		BigInteger operator *(BigInteger &entero);
-		BigInteger operator /(BigInteger &entero);
-		BigInteger operator %(BigInteger &entero);
-		BigInteger operator ==(BigInteger &entero);
-		BigInteger operator <(BigInteger &entero);
-		BigInteger operator <=(BigInteger &entero);
+public:
+    BigInteger();
+    BigInteger(const std::string& number);
+    BigInteger(const BigInteger& entero);
 
 
-		BigInteger sumarListaValores(Lista &bigIntegers);
-		BigInteger MultiplicarListaValores(Lista &bigIntegers);
+    void add(BigInteger& entero);
 
-		/*      Analizadoras      */
-		string toString();
+    void product(BigInteger& entero);
+
+    void substract(BigInteger& entero);
+
+    void quotient(BigInteger& divisor);
+
+    void remainder(BigInteger& entero);
+
+    void pow(int exponente);
+
+
+    std::string toString();
+
+
+    BigInteger operator+(BigInteger& entero);
+
+    BigInteger operator-(BigInteger& entero);
+
+    BigInteger operator*(BigInteger& entero);
+
+    BigInteger operator/(BigInteger& entero);
+
+    BigInteger operator%(BigInteger& entero);
+
+    bool operator==(BigInteger& entero);
+
+    bool operator<(BigInteger& entero);
+
+    bool operator<=(BigInteger& entero);
+
+    bool operator >=(BigInteger& entero);
+
+    BigInteger operator -=(BigInteger& entero);
 
 };
 
 #endif
-
