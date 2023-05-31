@@ -122,7 +122,6 @@ void BigInteger::quotient(BigInteger& divisor){
     BigInteger incremento("1");
     BigInteger residuo(*this);
 
-    // Realizar la división
     while (residuo >= divisor) {
         residuo -= divisor;
         cociente + incremento;
